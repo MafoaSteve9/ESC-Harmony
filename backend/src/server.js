@@ -1,19 +1,20 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth');
+import express from 'express';
+import { connect } from 'mongoose';
+import pkg from 'body-parser';
+const { json } = pkg;
+
+import cors from 'cors';
+import { config } from 'dotenv';
+import authRoutes from './routes/auth.js';
 const port = 3000
 
-dotenv.config();
+config();
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(json());
 
-mongoose
-    .connect(process.env.MONGO_URI)
+connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB ✅ !'))
     .catch((error) => console.error('Erreur de connexion MongoDB :', error));
 
