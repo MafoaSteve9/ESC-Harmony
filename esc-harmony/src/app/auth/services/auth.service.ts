@@ -18,4 +18,8 @@ export class AuthService {
   register(data: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, data);
   }
+
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
+  }
 }
