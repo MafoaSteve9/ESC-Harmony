@@ -28,13 +28,16 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    console.log('Formulaire soumis', this.loginForm.value);
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: (res: any) => {
-          localStorage.setItem('token', res.token);  // Stocker le token
+          console.log('Réponse API :', res);
+          localStorage.setItem('authToken', res.token);  // Stocker le token
           this.router.navigate(['/home']);  // Rediriger vers Home
         },
         error: (err: any) => {
+          console.error('Erreur API :', err);
           alert('Connexion échouée : ' + err.error.message);
         }
       });
