@@ -1,11 +1,27 @@
-<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-    <div>
-        <input formControlName="email" type="email" placeholder="Email" />
+<form class="example-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" type="email" matInput placeholder="Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+    <div class="example-button-row">
+        <button type="submit" mat-raised-button>S'inscrire</button>
     </div>
-    <div>
-        <input formControlName="password" type="password" placeholder="Mot de passe" />
-    </div>
-    <button type="submit">S'inscrire</button>
 </form>
 
 
