@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: solid 1px black;
+    margin: 20px;
+    border-radius: 30px;
+}
+img {
+    width: 50px;
+}
+h1 {
+    font-size: 18px;
+    color: rgb(14, 13, 12);
+    font-weight: bold;
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    padding: 5px;
+
+}
