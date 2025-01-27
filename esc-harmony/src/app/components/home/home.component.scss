@@ -5,7 +5,7 @@
 }
 
 body {
-    border: solid 1px black;
+    // border: solid 1px black;
     margin: 20px;
     border-radius: 30px;
 }
@@ -19,9 +19,28 @@ h1 {
 }
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
     border-radius: 40px;
     padding: 5px;
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .search-bar input {
+        width: 500px;
+        border-radius: 14px;
+        border: none;
+        background-color: rgba(128, 128, 128, 0.205);
+        text-align: center;
+        padding: 7px;
+    }
 
+}
+.container{
+    background-color: aliceblue;
+    height: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
